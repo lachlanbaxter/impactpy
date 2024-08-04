@@ -1,0 +1,3 @@
+from intraday_alpha import IntradayAlpha
+
+class TradingAlpha(IntradayAlpha): ...

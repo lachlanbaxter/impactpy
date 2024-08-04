@@ -1,0 +1,3 @@
+from impact_model import ImpactModel
+
+class AFSModel(ImpactModel): ...

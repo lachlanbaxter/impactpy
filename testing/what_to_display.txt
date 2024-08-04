@@ -1,0 +1,43 @@
+Adjust data to account for stock splits!
+
+Show some volume curves to show changes throughout the day
+
+Show fit improves when separating open, middle, close
+
+Check stability of parameters over time to tune training length
+
+Compare middle-of-day vs stochastic push models
+	Can try naive volume curve estimate vs parametric volume curve (quadratic? more parsimonious) do some sort of BIC to compare complexity / DoF
+
+Compare persistant impact on turn-of-day vs reset
+	This requires altering the group_by in the compute_impact function
+
+Compare universal vs local models
+	Show in_sample R^2 increases but out_of_sample decreases
+
+Do some clustering analysis to combine stocks into groups (cluster based on local estimates) (compare aglomerative vs other one)
+	Maybe can do some sort of K-medoids, recalculting push each time
+
+Check if clusters are stable over time
+
+Output some kind of trained Transformer that can be built into a backtesting engine
+
+Create synthetic alpha that can be captured
+
+Try various orders and produce a TCA table
+
+---------
+
+Rough control flow:
+
+These can be either daily averages or 
+- calculate volatility curves (see if this makes sense with a plot)
+- Calculate volume curves
+
+- partition data into groups: universal, local, groups
+	maybe this can be done by simply creating an ENUM to keep everything efficient
+
+
+- calculate impact making a small adjustment for persistent impact overnight using lam = 1
+
+- perform regression 
