@@ -1,0 +1,3 @@
+Create a caching mechanism for clean prices calculated during the fitting and transforming process.
+Is it just faster to not cache (this will be the first approach for simplicity)?
+
